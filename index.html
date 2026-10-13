@@ -1,0 +1,1051 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fundamental 1 | Class 10 – Unit 1 Review</title>
+    
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Poppins:wght@400;600;700;800;900&family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet" />
+
+    <style>
+        body { font-family: 'Inter', sans-serif; background-color: #f8fafc; color: #0f172a; }
+        h1, h2, h3, h4, h5, .font-poppins { font-family: 'Poppins', sans-serif; }
+        .font-nunito { font-family: 'Nunito', sans-serif; }
+        
+        .fade-in { animation: fadeIn 0.4s ease-out forwards; }
+        @keyframes fadeIn { from { opacity:0; transform:translateY(10px); } to { opacity:1; transform:translateY(0); } }
+        
+        .tab-content { display: none; }
+        .tab-content.active { display: block; animation: fadeIn 0.4s ease-out forwards; }
+        
+        .correct-highlight { background-color: #dcfce7 !important; border-color: #22c55e !important; color: #166534 !important;}
+        .wrong-highlight { background-color: #fee2e2 !important; border-color: #ef4444 !important; color: #991b1b !important;}
+        
+        .toast { position: fixed; bottom: 20px; right: 20px; padding: 15px 25px; border-radius: 8px; color: white; font-weight: bold; opacity: 0; transition: opacity 0.3s, transform 0.3s; transform: translateY(20px); pointer-events: none; z-index: 1000; box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1); }
+        .toast.show { opacity: 1; transform: translateY(0); }
+        .toast-success { background-color: #10b981; }
+        .toast-error { background-color: #ef4444; }
+
+        .modal-overlay { position: fixed; top: 0; left: 0; right: 0; bottom: 0; background: rgba(15, 23, 42, 0.8); backdrop-filter: blur(4px); display: none; align-items: center; justify-content: center; z-index: 100; opacity: 0; transition: opacity 0.3s; }
+        .modal-overlay.show { display: flex; opacity: 1; }
+        .modal-content { transform: scale(0.95); transition: transform 0.3s; }
+        .modal-overlay.show .modal-content { transform: scale(1); }
+
+        .transition-box { background: linear-gradient(135deg, #eef2ff, #e0e7ff); border-left: 4px solid #6366f1; border-radius: 12px; padding: 16px 20px; margin-bottom: 24px; }
+        .transition-box h4 { color: #3730a3; font-weight: 800; font-size: 0.85rem; text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 6px; display: flex; align-items: center; gap: 8px; }
+        .transition-box p { color: #334155; font-size: 0.9rem; line-height: 1.6; }
+        
+        .instruction-box { background: #fff7ed; border-left: 4px solid #f97316; border-radius: 12px; padding: 16px 20px; margin-bottom: 20px; }
+        .instruction-box h4 { color: #9a3412; font-weight: 800; font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 8px; display: flex; align-items: center; gap: 8px; }
+        .instruction-box ol, .instruction-box ul { color: #334155; font-size: 0.88rem; line-height: 1.7; padding-left: 20px; list-style-type: decimal;}
+
+        .no-scrollbar::-webkit-scrollbar { display: none; }
+        .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+        
+        .droppable { min-height: 40px; border: 2px dashed #cbd5e1; border-radius: 0.5rem; display: flex; align-items: center; justify-content: center; background: #f8fafc; transition: all 0.2s; padding: 0.5rem;}
+        
+        .order-btn { transition: all 0.2s ease; cursor: pointer; }
+        .order-btn:hover { transform: translateY(-2px); box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1); }
+
+        .jeopardy-card { transition: all 0.3s; }
+        .jeopardy-card:hover:not(:disabled) { transform: scale(1.05); z-index: 10; box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.5); }
+        .jeopardy-card:disabled { opacity: 0.2; cursor: not-allowed; }
+
+        @media print {
+            .no-print { display: none !important; }
+        }
+    </style>
+</head>
+<body class="min-h-screen flex flex-col">
+
+    <header class="bg-slate-900 text-white shadow-2xl relative overflow-hidden border-b-4 border-amber-500 no-print">
+        <div class="absolute top-0 right-0 w-96 h-96 bg-amber-600 rounded-full mix-blend-multiply filter blur-3xl opacity-30 -translate-y-1/2 translate-x-1/3"></div>
+        <div class="absolute bottom-0 left-0 w-96 h-96 bg-rose-600 rounded-full mix-blend-multiply filter blur-3xl opacity-30 translate-y-1/3 -translate-x-1/4"></div>
+        
+        <div class="max-w-7xl mx-auto px-6 py-8 relative z-10">
+            <div class="mb-6">
+                <img src="https://www.colomboamericano.edu.co/wp-content/uploads/2024/06/Logo-Colombo-Horizontal.png" alt="Colombo Americano Logo" class="h-10 md:h-12 bg-white/95 p-2 rounded-lg shadow-sm">
+            </div>
+
+            <div class="flex flex-col md:flex-row justify-between items-start md:items-center gap-6">
+                <div class="flex items-center gap-5">
+                    <div class="h-16 w-16 md:h-20 md:w-20 bg-white rounded-2xl p-2 shadow-lg flex items-center justify-center text-4xl">
+                        🏆
+                    </div>
+                    <div>
+                        <h1 class="text-3xl md:text-4xl font-black tracking-tight mb-2 flex items-center font-poppins">
+                            Fundamental 1
+                        </h1>
+                        <p class="text-slate-300 text-sm md:text-base font-medium tracking-wide uppercase">Class 10 <span class="text-amber-400 mx-2">•</span> Unit 1 Finale</p>
+                    </div>
+                </div>
+                
+                <div class="bg-white/10 p-5 rounded-2xl backdrop-blur-md border border-white/10 shadow-xl max-w-md w-full md:w-auto">
+                    <h2 class="text-xl font-bold text-amber-300 mb-3 border-b border-white/20 pb-2">🎯 Today's Mission</h2>
+                    <ul class="text-sm text-slate-100 space-y-2">
+                        <li class="flex items-start"><i class="fa-solid fa-check-circle text-amber-400 mt-1 mr-2"></i> <strong>Compete</strong> in a Unit 1 Jeopardy review game.</li>
+                        <li class="flex items-start"><i class="fa-solid fa-check-circle text-amber-400 mt-1 mr-2"></i> <strong>Complete</strong> core activities from Book Pages 8-15.</li>
+                        <li class="flex items-start"><i class="fa-solid fa-check-circle text-amber-400 mt-1 mr-2"></i> <strong>Master</strong> WH- questions in context.</li>
+                        <li class="flex items-start"><i class="fa-solid fa-check-circle text-amber-400 mt-1 mr-2"></i> <strong>Reconstruct</strong> extended, multi-line conversations.</li>
+                        <li class="flex items-start"><i class="fa-solid fa-check-circle text-amber-400 mt-1 mr-2"></i> <strong>Escape</strong> the Unit 1 final boss challenge!</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <nav class="bg-white shadow-sm sticky top-0 z-50 border-b border-slate-200 no-print">
+        <div class="max-w-7xl mx-auto px-4">
+            <div class="flex space-x-2 overflow-x-auto py-3 no-scrollbar" id="tab-container">
+                <button onclick="switchTab('tab-warmup')" id="btn-tab-warmup" class="px-6 py-2.5 rounded-full font-bold text-sm transition-all duration-300 bg-slate-800 text-white shadow-md whitespace-nowrap">
+                    1. 🎮 Jeopardy
+                </button>
+                <button onclick="switchTab('tab-book')" id="btn-tab-book" class="px-6 py-2.5 rounded-full font-bold text-sm transition-all duration-300 text-slate-500 hover:bg-slate-100 whitespace-nowrap">
+                    2. 📚 Book Practice
+                </button>
+                <button onclick="switchTab('tab-wh')" id="btn-tab-wh" class="px-6 py-2.5 rounded-full font-bold text-sm transition-all duration-300 text-slate-500 hover:bg-slate-100 whitespace-nowrap">
+                    3. 🔍 WH- Master
+                </button>
+                <button onclick="switchTab('tab-dialogues')" id="btn-tab-dialogues" class="px-6 py-2.5 rounded-full font-bold text-sm transition-all duration-300 text-slate-500 hover:bg-slate-100 whitespace-nowrap">
+                    4. 🧩 Dialogues
+                </button>
+                <button onclick="switchTab('tab-wrapup')" id="btn-tab-wrapup" class="px-6 py-2.5 rounded-full font-bold text-sm transition-all duration-300 text-slate-500 hover:bg-slate-100 whitespace-nowrap">
+                    5. 🔓 Wrap-Up Game
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <main class="flex-grow max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 w-full">
+
+        <!-- ========================================== -->
+        <!-- TAB 1: WARM UP (JEOPARDY)                  -->
+        <!-- ========================================== -->
+        <section id="tab-warmup" class="tab-content active no-print">
+            <div class="transition-box border-l-amber-500 bg-amber-50">
+                <h4 class="text-amber-800"><i class="fa-solid fa-trophy"></i> Unit 1 Championship</h4>
+                <p>Welcome to the final class of Unit 1! To warm up, we are going to play a classic game of Jeopardy. Test your memory on everything we have covered so far.</p>
+            </div>
+
+            <div class="instruction-box">
+                <h4><i class="fa-solid fa-users"></i> Activity 1: Group Jeopardy</h4>
+                <ol>
+                    <li>Work in teams. The teacher will call on a team.</li>
+                    <li>Choose a Category and a Point Value (e.g., "Verb To Be for 200").</li>
+                    <li>Read the question on the screen and select the correct answer!</li>
+                </ol>
+            </div>
+
+            <div class="bg-blue-900 p-6 md:p-10 rounded-3xl shadow-2xl mb-10 relative overflow-hidden">
+                <!-- TV Screen effect -->
+                <div class="absolute inset-0 pointer-events-none" style="background: repeating-linear-gradient(0deg, rgba(0,0,0,0.15), rgba(0,0,0,0.15) 1px, transparent 1px, transparent 2px); background-size: 100% 4px;"></div>
+                
+                <div class="flex justify-between items-center mb-8 relative z-10">
+                    <h2 class="text-3xl md:text-4xl font-black text-yellow-400 font-poppins drop-shadow-md">JEOPARDY!</h2>
+                    <div class="bg-black text-green-400 font-mono text-2xl font-black px-6 py-2 rounded-lg border-2 border-slate-700">SCORE: <span id="jeopardy-score">0</span></div>
+                </div>
+
+                <div class="grid grid-cols-2 lg:grid-cols-5 gap-2 md:gap-4 relative z-10" id="jeopardy-board">
+                    <!-- Headers -->
+                    <div class="bg-blue-700 text-white font-black text-center py-4 rounded shadow-sm text-xs md:text-sm border-b-4 border-blue-800 flex items-center justify-center uppercase">Articles (A/An)</div>
+                    <div class="bg-blue-700 text-white font-black text-center py-4 rounded shadow-sm text-xs md:text-sm border-b-4 border-blue-800 flex items-center justify-center uppercase">Plural Nouns</div>
+                    <div class="bg-blue-700 text-white font-black text-center py-4 rounded shadow-sm text-xs md:text-sm border-b-4 border-blue-800 flex items-center justify-center uppercase">Verb To Be</div>
+                    <div class="bg-blue-700 text-white font-black text-center py-4 rounded shadow-sm text-xs md:text-sm border-b-4 border-blue-800 flex items-center justify-center uppercase">Personal Info</div>
+                    <div class="bg-blue-700 text-white font-black text-center py-4 rounded shadow-sm text-xs md:text-sm border-b-4 border-blue-800 flex items-center justify-center uppercase">Reading Aloud</div>
+
+                    <!-- Row 100 -->
+                    <button onclick="openJeopardy(0, 0, 100)" id="btn-j-0-0" class="jeopardy-card bg-blue-600 text-yellow-300 font-black text-xl md:text-3xl py-4 rounded shadow-lg border-2 border-blue-400 drop-shadow-md">100</button>
+                    <button onclick="openJeopardy(1, 0, 100)" id="btn-j-1-0" class="jeopardy-card bg-blue-600 text-yellow-300 font-black text-xl md:text-3xl py-4 rounded shadow-lg border-2 border-blue-400 drop-shadow-md">100</button>
+                    <button onclick="openJeopardy(2, 0, 100)" id="btn-j-2-0" class="jeopardy-card bg-blue-600 text-yellow-300 font-black text-xl md:text-3xl py-4 rounded shadow-lg border-2 border-blue-400 drop-shadow-md">100</button>
+                    <button onclick="openJeopardy(3, 0, 100)" id="btn-j-3-0" class="jeopardy-card bg-blue-600 text-yellow-300 font-black text-xl md:text-3xl py-4 rounded shadow-lg border-2 border-blue-400 drop-shadow-md">100</button>
+                    <button onclick="openJeopardy(4, 0, 100)" id="btn-j-4-0" class="jeopardy-card bg-blue-600 text-yellow-300 font-black text-xl md:text-3xl py-4 rounded shadow-lg border-2 border-blue-400 drop-shadow-md">100</button>
+
+                    <!-- Row 200 -->
+                    <button onclick="openJeopardy(0, 1, 200)" id="btn-j-0-1" class="jeopardy-card bg-blue-600 text-yellow-300 font-black text-xl md:text-3xl py-4 rounded shadow-lg border-2 border-blue-400 drop-shadow-md">200</button>
+                    <button onclick="openJeopardy(1, 1, 200)" id="btn-j-1-1" class="jeopardy-card bg-blue-600 text-yellow-300 font-black text-xl md:text-3xl py-4 rounded shadow-lg border-2 border-blue-400 drop-shadow-md">200</button>
+                    <button onclick="openJeopardy(2, 1, 200)" id="btn-j-2-1" class="jeopardy-card bg-blue-600 text-yellow-300 font-black text-xl md:text-3xl py-4 rounded shadow-lg border-2 border-blue-400 drop-shadow-md">200</button>
+                    <button onclick="openJeopardy(3, 1, 200)" id="btn-j-3-1" class="jeopardy-card bg-blue-600 text-yellow-300 font-black text-xl md:text-3xl py-4 rounded shadow-lg border-2 border-blue-400 drop-shadow-md">200</button>
+                    <button onclick="openJeopardy(4, 1, 200)" id="btn-j-4-1" class="jeopardy-card bg-blue-600 text-yellow-300 font-black text-xl md:text-3xl py-4 rounded shadow-lg border-2 border-blue-400 drop-shadow-md">200</button>
+
+                    <!-- Row 300 -->
+                    <button onclick="openJeopardy(0, 2, 300)" id="btn-j-0-2" class="jeopardy-card bg-blue-600 text-yellow-300 font-black text-xl md:text-3xl py-4 rounded shadow-lg border-2 border-blue-400 drop-shadow-md">300</button>
+                    <button onclick="openJeopardy(1, 2, 300)" id="btn-j-1-2" class="jeopardy-card bg-blue-600 text-yellow-300 font-black text-xl md:text-3xl py-4 rounded shadow-lg border-2 border-blue-400 drop-shadow-md">300</button>
+                    <button onclick="openJeopardy(2, 2, 300)" id="btn-j-2-2" class="jeopardy-card bg-blue-600 text-yellow-300 font-black text-xl md:text-3xl py-4 rounded shadow-lg border-2 border-blue-400 drop-shadow-md">300</button>
+                    <button onclick="openJeopardy(3, 2, 300)" id="btn-j-3-2" class="jeopardy-card bg-blue-600 text-yellow-300 font-black text-xl md:text-3xl py-4 rounded shadow-lg border-2 border-blue-400 drop-shadow-md">300</button>
+                    <button onclick="openJeopardy(4, 2, 300)" id="btn-j-4-2" class="jeopardy-card bg-blue-600 text-yellow-300 font-black text-xl md:text-3xl py-4 rounded shadow-lg border-2 border-blue-400 drop-shadow-md">300</button>
+
+                    <!-- Row 400 -->
+                    <button onclick="openJeopardy(0, 3, 400)" id="btn-j-0-3" class="jeopardy-card bg-blue-600 text-yellow-300 font-black text-xl md:text-3xl py-4 rounded shadow-lg border-2 border-blue-400 drop-shadow-md">400</button>
+                    <button onclick="openJeopardy(1, 3, 400)" id="btn-j-1-3" class="jeopardy-card bg-blue-600 text-yellow-300 font-black text-xl md:text-3xl py-4 rounded shadow-lg border-2 border-blue-400 drop-shadow-md">400</button>
+                    <button onclick="openJeopardy(2, 3, 400)" id="btn-j-2-3" class="jeopardy-card bg-blue-600 text-yellow-300 font-black text-xl md:text-3xl py-4 rounded shadow-lg border-2 border-blue-400 drop-shadow-md">400</button>
+                    <button onclick="openJeopardy(3, 3, 400)" id="btn-j-3-3" class="jeopardy-card bg-blue-600 text-yellow-300 font-black text-xl md:text-3xl py-4 rounded shadow-lg border-2 border-blue-400 drop-shadow-md">400</button>
+                    <button onclick="openJeopardy(4, 3, 400)" id="btn-j-4-3" class="jeopardy-card bg-blue-600 text-yellow-300 font-black text-xl md:text-3xl py-4 rounded shadow-lg border-2 border-blue-400 drop-shadow-md">400</button>
+
+                    <!-- Row 500 -->
+                    <button onclick="openJeopardy(0, 4, 500)" id="btn-j-0-4" class="jeopardy-card bg-blue-600 text-yellow-300 font-black text-xl md:text-3xl py-4 rounded shadow-lg border-2 border-blue-400 drop-shadow-md">500</button>
+                    <button onclick="openJeopardy(1, 4, 500)" id="btn-j-1-4" class="jeopardy-card bg-blue-600 text-yellow-300 font-black text-xl md:text-3xl py-4 rounded shadow-lg border-2 border-blue-400 drop-shadow-md">500</button>
+                    <button onclick="openJeopardy(2, 4, 500)" id="btn-j-2-4" class="jeopardy-card bg-blue-600 text-yellow-300 font-black text-xl md:text-3xl py-4 rounded shadow-lg border-2 border-blue-400 drop-shadow-md">500</button>
+                    <button onclick="openJeopardy(3, 4, 500)" id="btn-j-3-4" class="jeopardy-card bg-blue-600 text-yellow-300 font-black text-xl md:text-3xl py-4 rounded shadow-lg border-2 border-blue-400 drop-shadow-md">500</button>
+                    <button onclick="openJeopardy(4, 4, 500)" id="btn-j-4-4" class="jeopardy-card bg-blue-600 text-yellow-300 font-black text-xl md:text-3xl py-4 rounded shadow-lg border-2 border-blue-400 drop-shadow-md">500</button>
+                </div>
+            </div>
+
+            <div class="text-center mt-8 border-t border-slate-200 pt-8">
+                 <button onclick="switchTab('tab-book')" class="bg-slate-800 hover:bg-slate-700 text-white px-8 py-4 rounded-full font-bold transition shadow-lg transform hover:-translate-y-1">Next: Book Practice 📚 <i class="fa-solid fa-arrow-right ml-2"></i></button>
+            </div>
+        </section>
+
+        <!-- ========================================== -->
+        <!-- TAB 2: BOOK PRACTICE                       -->
+        <!-- ========================================== -->
+        <section id="tab-book" class="tab-content no-print">
+            <div class="bg-gradient-to-r from-blue-600 to-indigo-700 rounded-3xl p-8 md:p-12 shadow-2xl text-white relative overflow-hidden mb-10 text-center">
+                <div class="absolute inset-0 opacity-20" style="background-image: url('data:image/svg+xml,%3Csvg width=\'60\' height=\'60\' viewBox=\'0 0 60 60\' xmlns=\'http://www.w3.org/2000/svg\'%3E%3Cg fill=\'none\' fill-rule=\'evenodd\'%3E%3Cg fill=\'#ffffff\' fill-opacity=\'1\'%3E%3Cpath d=\'M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z\'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E');"></div>
+                
+                <div class="relative z-10">
+                    <i class="fa-solid fa-book-open text-6xl mb-6 text-blue-200"></i>
+                    <h2 class="text-4xl font-poppins font-black mb-4">Book Practice Time</h2>
+                    <p class="text-xl text-blue-100 max-w-2xl mx-auto mb-8">Please open your physical or digital books. We are going to cover the most important activities from <strong>Pages 8 to 15</strong>.</p>
+                    
+                    <div class="bg-white/10 backdrop-blur-md p-6 rounded-2xl border border-white/20 max-w-3xl mx-auto text-left">
+                        <h3 class="font-bold text-amber-300 mb-4 text-lg border-b border-white/20 pb-2">Topics Covered Today:</h3>
+                        <ul class="space-y-3 font-medium">
+                            <li class="flex items-center gap-3"><i class="fa-solid fa-check text-emerald-400"></i> Reading: Inferring information from social profiles.</li>
+                            <li class="flex items-center gap-3"><i class="fa-solid fa-check text-emerald-400"></i> Grammar: Verb "To Be" statements and Yes/No questions.</li>
+                            <li class="flex items-center gap-3"><i class="fa-solid fa-check text-emerald-400"></i> Listening: Deduce relationships from audio.</li>
+                            <li class="flex items-center gap-3"><i class="fa-solid fa-check text-emerald-400"></i> Vocabulary: Formal vs. Informal Greetings.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="text-center mt-12 border-t border-slate-200 pt-8">
+                 <button onclick="switchTab('tab-wh')" class="bg-slate-800 hover:bg-slate-700 text-white px-8 py-4 rounded-full font-bold transition shadow-lg transform hover:-translate-y-1">Next: WH- Questions 🔍 <i class="fa-solid fa-arrow-right ml-2"></i></button>
+            </div>
+        </section>
+
+        <!-- ========================================== -->
+        <!-- TAB 3: WH- QUESTIONS (EXPANDED)            -->
+        <!-- ========================================== -->
+        <section id="tab-wh" class="tab-content no-print">
+            <div class="transition-box border-l-amber-500 bg-amber-50">
+                <h4 class="text-amber-800"><i class="fa-solid fa-question"></i> Information Questions (WH- Words)</h4>
+                <p>We know how to answer Yes or No. Now, let's practice getting specific details using WH- words. Remember: don't just translate, think about the <strong>concept</strong> you want!</p>
+            </div>
+
+            <!-- Beautiful WH- Explanation Cards -->
+            <div class="bg-white p-6 md:p-8 rounded-3xl shadow-sm border border-slate-200 mb-10 overflow-hidden relative">
+                <div class="grid grid-cols-2 md:grid-cols-5 gap-4 relative z-10 mb-6">
+                    <div class="bg-gradient-to-b from-sky-50 to-white p-4 rounded-2xl border border-sky-100 text-center shadow-sm">
+                        <div class="text-4xl mb-2">👤</div>
+                        <h4 class="font-black text-sky-700 text-lg uppercase tracking-wider mb-1">Who</h4>
+                        <p class="text-xs font-bold text-slate-500 uppercase">A Person</p>
+                    </div>
+                    <div class="bg-gradient-to-b from-emerald-50 to-white p-4 rounded-2xl border border-emerald-100 text-center shadow-sm">
+                        <div class="text-4xl mb-2">💡</div>
+                        <h4 class="font-black text-emerald-700 text-lg uppercase tracking-wider mb-1">What</h4>
+                        <p class="text-xs font-bold text-slate-500 uppercase">A Thing / Idea</p>
+                    </div>
+                    <div class="bg-gradient-to-b from-rose-50 to-white p-4 rounded-2xl border border-rose-100 text-center shadow-sm">
+                        <div class="text-4xl mb-2">📍</div>
+                        <h4 class="font-black text-rose-700 text-lg uppercase tracking-wider mb-1">Where</h4>
+                        <p class="text-xs font-bold text-slate-500 uppercase">A Place</p>
+                    </div>
+                    <div class="bg-gradient-to-b from-amber-50 to-white p-4 rounded-2xl border border-amber-100 text-center shadow-sm">
+                        <div class="text-4xl mb-2">⏰</div>
+                        <h4 class="font-black text-amber-700 text-lg uppercase tracking-wider mb-1">When</h4>
+                        <p class="text-xs font-bold text-slate-500 uppercase">Time / Date</p>
+                    </div>
+                    <div class="bg-gradient-to-b from-purple-50 to-white p-4 rounded-2xl border border-purple-100 text-center shadow-sm md:col-span-1 col-span-2">
+                        <div class="text-4xl mb-2">⚙️</div>
+                        <h4 class="font-black text-purple-700 text-lg uppercase tracking-wider mb-1">How</h4>
+                        <p class="text-xs font-bold text-slate-500 uppercase">Condition / Age</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Activity 2: Story Reading (Expanded) -->
+            <div class="instruction-box">
+                <h4><i class="fa-solid fa-book-open"></i> Activity 2: The Digital Nomad Story</h4>
+                <ol>
+                    <li>Read the extended text about Maya.</li>
+                    <li>Read the answers on the right. Type the correct WH- word in the blank to make the question match the answer!</li>
+                </ol>
+            </div>
+
+            <div class="bg-white p-6 md:p-8 rounded-3xl shadow-sm border border-slate-200 mb-10">
+                <div class="flex flex-col md:flex-row gap-6 items-start bg-slate-50 p-6 rounded-2xl border border-slate-100 mb-8">
+                    <div class="w-24 h-24 bg-indigo-100 rounded-full flex items-center justify-center text-4xl shrink-0 border-4 border-white shadow-sm mt-2">💻</div>
+                    <p class="text-lg text-slate-700 font-nunito leading-relaxed">
+                        "Meet Maya. She is 28 years old, and she is a software developer from Tokyo, Japan. Right now, she is not in Japan because she is working in New York for a big technology project. Her birthday is in December, so she loves the cold winter weather. Maya is very busy, but she is happy because her job is interesting and her new colleagues are friendly."
+                    </p>
+                </div>
+
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-4">
+                    <!-- Q1 -->
+                    <div class="flex flex-col bg-white p-3 rounded-lg border border-slate-200 shadow-sm">
+                        <div class="flex items-center gap-2 mb-2">
+                            <span class="font-bold text-slate-400">1.</span>
+                            <input type="text" id="whs-1" class="border-b-2 border-slate-400 w-20 px-2 outline-none text-center font-bold text-indigo-600 focus:border-indigo-500 uppercase bg-transparent" placeholder="...">
+                            <span class="font-medium text-slate-800">is the software developer?</span>
+                        </div>
+                        <span class="text-sm text-emerald-600 font-bold bg-emerald-50 px-3 py-1 rounded">➔ Maya.</span>
+                    </div>
+                    <!-- Q2 -->
+                    <div class="flex flex-col bg-white p-3 rounded-lg border border-slate-200 shadow-sm">
+                        <div class="flex items-center gap-2 mb-2">
+                            <span class="font-bold text-slate-400">2.</span>
+                            <input type="text" id="whs-2" class="border-b-2 border-slate-400 w-20 px-2 outline-none text-center font-bold text-indigo-600 focus:border-indigo-500 uppercase bg-transparent" placeholder="...">
+                            <span class="font-medium text-slate-800">old is Maya?</span>
+                        </div>
+                        <span class="text-sm text-emerald-600 font-bold bg-emerald-50 px-3 py-1 rounded">➔ She is 28 years old.</span>
+                    </div>
+                    <!-- Q3 -->
+                    <div class="flex flex-col bg-white p-3 rounded-lg border border-slate-200 shadow-sm">
+                        <div class="flex items-center gap-2 mb-2">
+                            <span class="font-bold text-slate-400">3.</span>
+                            <input type="text" id="whs-3" class="border-b-2 border-slate-400 w-20 px-2 outline-none text-center font-bold text-indigo-600 focus:border-indigo-500 uppercase bg-transparent" placeholder="...">
+                            <span class="font-medium text-slate-800">is Maya from?</span>
+                        </div>
+                        <span class="text-sm text-emerald-600 font-bold bg-emerald-50 px-3 py-1 rounded">➔ She is from Tokyo, Japan.</span>
+                    </div>
+                    <!-- Q4 -->
+                    <div class="flex flex-col bg-white p-3 rounded-lg border border-slate-200 shadow-sm">
+                        <div class="flex items-center gap-2 mb-2">
+                            <span class="font-bold text-slate-400">4.</span>
+                            <input type="text" id="whs-4" class="border-b-2 border-slate-400 w-20 px-2 outline-none text-center font-bold text-indigo-600 focus:border-indigo-500 uppercase bg-transparent" placeholder="...">
+                            <span class="font-medium text-slate-800">is her job?</span>
+                        </div>
+                        <span class="text-sm text-emerald-600 font-bold bg-emerald-50 px-3 py-1 rounded">➔ She is a software developer.</span>
+                    </div>
+                    <!-- Q5 -->
+                    <div class="flex flex-col bg-white p-3 rounded-lg border border-slate-200 shadow-sm">
+                        <div class="flex items-center gap-2 mb-2">
+                            <span class="font-bold text-slate-400">5.</span>
+                            <input type="text" id="whs-5" class="border-b-2 border-slate-400 w-20 px-2 outline-none text-center font-bold text-indigo-600 focus:border-indigo-500 uppercase bg-transparent" placeholder="...">
+                            <span class="font-medium text-slate-800">is her birthday?</span>
+                        </div>
+                        <span class="text-sm text-emerald-600 font-bold bg-emerald-50 px-3 py-1 rounded">➔ It is in December.</span>
+                    </div>
+                    <!-- Q6 -->
+                    <div class="flex flex-col bg-white p-3 rounded-lg border border-slate-200 shadow-sm">
+                        <div class="flex items-center gap-2 mb-2">
+                            <span class="font-bold text-slate-400">6.</span>
+                            <input type="text" id="whs-6" class="border-b-2 border-slate-400 w-20 px-2 outline-none text-center font-bold text-indigo-600 focus:border-indigo-500 uppercase bg-transparent" placeholder="...">
+                            <span class="font-medium text-slate-800">is she working right now?</span>
+                        </div>
+                        <span class="text-sm text-emerald-600 font-bold bg-emerald-50 px-3 py-1 rounded">➔ She is working in New York.</span>
+                    </div>
+                    <!-- Q7 -->
+                    <div class="flex flex-col bg-white p-3 rounded-lg border border-slate-200 shadow-sm">
+                        <div class="flex items-center gap-2 mb-2">
+                            <span class="font-bold text-slate-400">7.</span>
+                            <input type="text" id="whs-7" class="border-b-2 border-slate-400 w-20 px-2 outline-none text-center font-bold text-indigo-600 focus:border-indigo-500 uppercase bg-transparent" placeholder="...">
+                            <span class="font-medium text-slate-800">is her project?</span>
+                        </div>
+                        <span class="text-sm text-emerald-600 font-bold bg-emerald-50 px-3 py-1 rounded">➔ It is a big technology project.</span>
+                    </div>
+                    <!-- Q8 -->
+                    <div class="flex flex-col bg-white p-3 rounded-lg border border-slate-200 shadow-sm">
+                        <div class="flex items-center gap-2 mb-2">
+                            <span class="font-bold text-slate-400">8.</span>
+                            <input type="text" id="whs-8" class="border-b-2 border-slate-400 w-20 px-2 outline-none text-center font-bold text-indigo-600 focus:border-indigo-500 uppercase bg-transparent" placeholder="...">
+                            <span class="font-medium text-slate-800">weather does she love?</span>
+                        </div>
+                        <span class="text-sm text-emerald-600 font-bold bg-emerald-50 px-3 py-1 rounded">➔ She loves cold winter weather.</span>
+                    </div>
+                    <!-- Q9 -->
+                    <div class="flex flex-col bg-white p-3 rounded-lg border border-slate-200 shadow-sm">
+                        <div class="flex items-center gap-2 mb-2">
+                            <span class="font-bold text-slate-400">9.</span>
+                            <input type="text" id="whs-9" class="border-b-2 border-slate-400 w-20 px-2 outline-none text-center font-bold text-indigo-600 focus:border-indigo-500 uppercase bg-transparent" placeholder="...">
+                            <span class="font-medium text-slate-800">are her new colleagues?</span>
+                        </div>
+                        <span class="text-sm text-emerald-600 font-bold bg-emerald-50 px-3 py-1 rounded">➔ They are friendly.</span>
+                    </div>
+                    <!-- Q10 -->
+                    <div class="flex flex-col bg-white p-3 rounded-lg border border-slate-200 shadow-sm">
+                        <div class="flex items-center gap-2 mb-2">
+                            <span class="font-bold text-slate-400">10.</span>
+                            <input type="text" id="whs-10" class="border-b-2 border-slate-400 w-20 px-2 outline-none text-center font-bold text-indigo-600 focus:border-indigo-500 uppercase bg-transparent" placeholder="...">
+                            <span class="font-medium text-slate-800">is she happy?</span>
+                        </div>
+                        <span class="text-sm text-emerald-600 font-bold bg-emerald-50 px-3 py-1 rounded">➔ Because her job is interesting.</span>
+                    </div>
+                </div>
+                <div class="mt-6 text-center flex flex-col md:flex-row items-center justify-center gap-4">
+                    <button onclick="checkInputs([ {id:'whs-1', a:'who'}, {id:'whs-2', a:'how'}, {id:'whs-3', a:'where'}, {id:'whs-4', a:'what'}, {id:'whs-5', a:'when'}, {id:'whs-6', a:'where'}, {id:'whs-7', a:'what'}, {id:'whs-8', a:'what'}, {id:'whs-9', a:'how'}, {id:'whs-10', a:'why'} ], 'whs-feedback')" class="bg-indigo-600 hover:bg-indigo-500 text-white font-bold py-3 px-10 rounded-full transition shadow-sm text-sm">Check 10 Words</button>
+                    <p id="whs-feedback" class="font-bold text-sm h-5"></p>
+                </div>
+            </div>
+
+            <!-- Activity 3: Dropdown Match -->
+            <div class="instruction-box">
+                <h4><i class="fa-solid fa-list-ol"></i> Activity 3: Match the Answer</h4>
+                <ol>
+                    <li>Read the WH- Question carefully.</li>
+                    <li>Select the correct answer from the dropdown menu.</li>
+                </ol>
+            </div>
+
+            <div class="bg-white p-6 rounded-2xl shadow-sm border border-slate-200 mb-10">
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                    <div class="flex flex-col gap-2 bg-slate-50 p-3 rounded-lg border border-slate-100">
+                        <span class="font-bold text-slate-700">1. What is your manager's name?</span>
+                        <select id="wm-1" class="border border-slate-300 rounded p-1.5 text-sm font-bold text-indigo-700 outline-none w-full"><option value="">---</option><option value="wrong">It is in the office.</option><option value="correct">His name is David.</option></select>
+                    </div>
+                    <div class="flex flex-col gap-2 bg-slate-50 p-3 rounded-lg border border-slate-100">
+                        <span class="font-bold text-slate-700">2. Where are your parents from?</span>
+                        <select id="wm-2" class="border border-slate-300 rounded p-1.5 text-sm font-bold text-indigo-700 outline-none w-full"><option value="">---</option><option value="correct">They are from Brazil.</option><option value="wrong">She is from Mexico.</option></select>
+                    </div>
+                    <div class="flex flex-col gap-2 bg-slate-50 p-3 rounded-lg border border-slate-100">
+                        <span class="font-bold text-slate-700">3. When is the team meeting?</span>
+                        <select id="wm-3" class="border border-slate-300 rounded p-1.5 text-sm font-bold text-indigo-700 outline-none w-full"><option value="">---</option><option value="correct">It is on Monday.</option><option value="wrong">It is in Room B.</option></select>
+                    </div>
+                    <div class="flex flex-col gap-2 bg-slate-50 p-3 rounded-lg border border-slate-100">
+                        <span class="font-bold text-slate-700">4. How old is your brother?</span>
+                        <select id="wm-4" class="border border-slate-300 rounded p-1.5 text-sm font-bold text-indigo-700 outline-none w-full"><option value="">---</option><option value="wrong">He has 25 years.</option><option value="correct">He is 25 years old.</option></select>
+                    </div>
+                    <div class="flex flex-col gap-2 bg-slate-50 p-3 rounded-lg border border-slate-100">
+                        <span class="font-bold text-slate-700">5. Who is the new student?</span>
+                        <select id="wm-5" class="border border-slate-300 rounded p-1.5 text-sm font-bold text-indigo-700 outline-none w-full"><option value="">---</option><option value="correct">That is Maria.</option><option value="wrong">It is a student.</option></select>
+                    </div>
+                    <div class="flex flex-col gap-2 bg-slate-50 p-3 rounded-lg border border-slate-100">
+                        <span class="font-bold text-slate-700">6. What is your favorite hobby?</span>
+                        <select id="wm-6" class="border border-slate-300 rounded p-1.5 text-sm font-bold text-indigo-700 outline-none w-full"><option value="">---</option><option value="wrong">I am an artist.</option><option value="correct">I like playing video games.</option></select>
+                    </div>
+                    <div class="flex flex-col gap-2 bg-slate-50 p-3 rounded-lg border border-slate-100">
+                        <span class="font-bold text-slate-700">7. Where is the English class?</span>
+                        <select id="wm-7" class="border border-slate-300 rounded p-1.5 text-sm font-bold text-indigo-700 outline-none w-full"><option value="">---</option><option value="correct">It is in Room 10.</option><option value="wrong">It is at 9:00 AM.</option></select>
+                    </div>
+                    <div class="flex flex-col gap-2 bg-slate-50 p-3 rounded-lg border border-slate-100">
+                        <span class="font-bold text-slate-700">8. How are you today?</span>
+                        <select id="wm-8" class="border border-slate-300 rounded p-1.5 text-sm font-bold text-indigo-700 outline-none w-full"><option value="">---</option><option value="wrong">I am 20 years old.</option><option value="correct">I am doing very well, thanks.</option></select>
+                    </div>
+                    <div class="flex flex-col gap-2 bg-slate-50 p-3 rounded-lg border border-slate-100">
+                        <span class="font-bold text-slate-700">9. What do you do?</span>
+                        <select id="wm-9" class="border border-slate-300 rounded p-1.5 text-sm font-bold text-indigo-700 outline-none w-full"><option value="">---</option><option value="correct">I am an accountant.</option><option value="wrong">I do my homework.</option></select>
+                    </div>
+                    <div class="flex flex-col gap-2 bg-slate-50 p-3 rounded-lg border border-slate-100">
+                        <span class="font-bold text-slate-700">10. When is your birthday?</span>
+                        <select id="wm-10" class="border border-slate-300 rounded p-1.5 text-sm font-bold text-indigo-700 outline-none w-full"><option value="">---</option><option value="wrong">I am in January.</option><option value="correct">It is on January 15th.</option></select>
+                    </div>
+                </div>
+                <div class="mt-6 text-center">
+                    <button onclick="checkDropdowns(['wm-1', 'wm-2', 'wm-3', 'wm-4', 'wm-5', 'wm-6', 'wm-7', 'wm-8', 'wm-9', 'wm-10'], 'wm-feedback')" class="bg-indigo-600 hover:bg-indigo-500 text-white font-bold py-2 px-8 rounded-full transition shadow-sm text-sm">Check Answers</button>
+                    <p id="wm-feedback" class="mt-2 font-bold h-5 text-sm"></p>
+                </div>
+            </div>
+
+            <div class="text-center mt-12 border-t border-slate-200 pt-8">
+                 <button onclick="switchTab('tab-dialogues')" class="bg-slate-800 hover:bg-slate-700 text-white px-8 py-4 rounded-full font-bold transition shadow-lg transform hover:-translate-y-1">Next: Dialogue Reconstructor 🧩 <i class="fa-solid fa-arrow-right ml-2"></i></button>
+            </div>
+        </section>
+
+        <!-- ========================================== -->
+        <!-- TAB 4: DIALOGUES                           -->
+        <!-- ========================================== -->
+        <section id="tab-dialogues" class="tab-content">
+            <div class="bg-slate-900 rounded-3xl p-8 md:p-12 shadow-2xl text-white relative overflow-hidden mb-10 no-print">
+                <div class="absolute -right-10 -bottom-10 text-9xl opacity-5 pointer-events-none">🧩</div>
+                <div class="absolute inset-0 opacity-10" style="background-image: radial-gradient(#10b981 2px, transparent 2px); background-size: 30px 30px;"></div>
+                
+                <div class="text-center relative z-10 mb-10">
+                    <span class="bg-emerald-500 text-slate-900 text-xs font-black px-4 py-2 rounded-full uppercase tracking-wider shadow-sm">Activity 4: Scrambled Context</span>
+                    <h2 class="text-3xl md:text-5xl font-poppins font-black mt-4 mb-4">The Dialogue Reconstructor</h2>
+                    <p class="text-slate-300 max-w-2xl mx-auto text-lg">The scripts for three long English conversations have been scrambled. Work with your team to rebuild the conversations in the correct logical order and complete the missing grammar.</p>
+                </div>
+
+                <!-- Scene 1 -->
+                <div class="bg-slate-800 p-6 md:p-8 rounded-2xl border border-slate-600 shadow-xl mb-8 relative z-10">
+                    <h3 class="text-xl font-bold text-amber-400 mb-4 flex items-center gap-3 border-b border-slate-700 pb-2"><i class="fa-solid fa-plane"></i> Scene 1: The Airport Meeting</h3>
+                    <p class="text-sm text-slate-300 mb-6">Click the buttons in the "Word Bank" to move them into the "Dialogue Board". Then, choose the correct words from the dropdowns.</p>
+                    
+                    <div class="grid grid-cols-1 xl:grid-cols-2 gap-6">
+                        <div class="bg-slate-900 rounded-xl p-4 border border-slate-700 min-h-[350px]">
+                            <h4 class="text-xs font-black text-slate-500 uppercase tracking-widest mb-3">Word Bank (Click to move)</h4>
+                            <div class="flex flex-col gap-2" id="bank-1"></div>
+                        </div>
+                        <div class="bg-slate-100 rounded-xl p-4 border-2 border-emerald-500/50 shadow-inner min-h-[350px]">
+                            <h4 class="text-xs font-black text-emerald-600 uppercase tracking-widest mb-3">Dialogue Board</h4>
+                            <div class="flex flex-col gap-2" id="board-1"></div>
+                        </div>
+                    </div>
+                    <div class="mt-6 flex justify-between items-center">
+                        <button onclick="resetDialogue(1)" class="text-slate-400 hover:text-white text-sm font-bold transition"><i class="fa-solid fa-rotate-right"></i> Reset</button>
+                        <button onclick="checkDialogue(1)" class="bg-emerald-600 hover:bg-emerald-500 text-white px-8 py-3 rounded-full font-bold transition shadow-lg text-sm">Check Scene 1</button>
+                    </div>
+                    <p id="fb-diag-1" class="text-center font-bold text-sm h-5 mt-4"></p>
+                </div>
+
+                <!-- Scene 2 -->
+                <div class="bg-slate-800 p-6 md:p-8 rounded-2xl border border-slate-600 shadow-xl mb-8 relative z-10">
+                    <h3 class="text-xl font-bold text-blue-400 mb-4 flex items-center gap-3 border-b border-slate-700 pb-2"><i class="fa-solid fa-mug-hot"></i> Scene 2: Catching up at a Cafe</h3>
+                    
+                    <div class="grid grid-cols-1 xl:grid-cols-2 gap-6">
+                        <div class="bg-slate-900 rounded-xl p-4 border border-slate-700 min-h-[350px]">
+                            <h4 class="text-xs font-black text-slate-500 uppercase tracking-widest mb-3">Word Bank</h4>
+                            <div class="flex flex-col gap-2" id="bank-2"></div>
+                        </div>
+                        <div class="bg-slate-100 rounded-xl p-4 border-2 border-blue-500/50 shadow-inner min-h-[350px]">
+                            <h4 class="text-xs font-black text-blue-600 uppercase tracking-widest mb-3">Dialogue Board</h4>
+                            <div class="flex flex-col gap-2" id="board-2"></div>
+                        </div>
+                    </div>
+                    <div class="mt-6 flex justify-between items-center">
+                        <button onclick="resetDialogue(2)" class="text-slate-400 hover:text-white text-sm font-bold transition"><i class="fa-solid fa-rotate-right"></i> Reset</button>
+                        <button onclick="checkDialogue(2)" class="bg-blue-600 hover:bg-blue-500 text-white px-8 py-3 rounded-full font-bold transition shadow-lg text-sm">Check Scene 2</button>
+                    </div>
+                    <p id="fb-diag-2" class="text-center font-bold text-sm h-5 mt-4"></p>
+                </div>
+
+                <!-- Scene 3 -->
+                <div class="bg-slate-800 p-6 md:p-8 rounded-2xl border border-slate-600 shadow-xl relative z-10">
+                    <h3 class="text-xl font-bold text-purple-400 mb-4 flex items-center gap-3 border-b border-slate-700 pb-2"><i class="fa-solid fa-laptop-code"></i> Scene 3: Online Meeting Problem</h3>
+                    
+                    <div class="grid grid-cols-1 xl:grid-cols-2 gap-6">
+                        <div class="bg-slate-900 rounded-xl p-4 border border-slate-700 min-h-[350px]">
+                            <h4 class="text-xs font-black text-slate-500 uppercase tracking-widest mb-3">Word Bank</h4>
+                            <div class="flex flex-col gap-2" id="bank-3"></div>
+                        </div>
+                        <div class="bg-slate-100 rounded-xl p-4 border-2 border-purple-500/50 shadow-inner min-h-[350px]">
+                            <h4 class="text-xs font-black text-purple-600 uppercase tracking-widest mb-3">Dialogue Board</h4>
+                            <div class="flex flex-col gap-2" id="board-3"></div>
+                        </div>
+                    </div>
+                    <div class="mt-6 flex justify-between items-center">
+                        <button onclick="resetDialogue(3)" class="text-slate-400 hover:text-white text-sm font-bold transition"><i class="fa-solid fa-rotate-right"></i> Reset</button>
+                        <button onclick="checkDialogue(3)" class="bg-purple-600 hover:bg-purple-500 text-white px-8 py-3 rounded-full font-bold transition shadow-lg text-sm">Check Scene 3</button>
+                    </div>
+                    <p id="fb-diag-3" class="text-center font-bold text-sm h-5 mt-4"></p>
+                </div>
+
+            </div>
+            
+            <div class="text-center mt-12 border-t border-slate-200 pt-8">
+                 <button onclick="switchTab('tab-wrapup')" class="bg-slate-800 hover:bg-slate-700 text-white px-8 py-4 rounded-full font-bold transition shadow-lg transform hover:-translate-y-1">Next: The Final Boss 🔓 <i class="fa-solid fa-arrow-right ml-2"></i></button>
+            </div>
+        </section>
+
+        <!-- ========================================== -->
+        <!-- TAB 5: WRAP-UP GAME                        -->
+        <!-- ========================================== -->
+        <section id="tab-wrapup" class="tab-content no-print">
+            <div class="bg-slate-900 rounded-3xl p-8 md:p-12 shadow-2xl text-white relative overflow-hidden text-center min-h-[600px] flex flex-col justify-center">
+                <!-- Cool hacker/matrix background effect -->
+                <div class="absolute inset-0 opacity-20 pointer-events-none" style="background-image: repeating-linear-gradient(0deg, #10b981, #10b981 1px, transparent 1px, transparent 20px); background-size: 100% 20px;"></div>
+                <div class="absolute inset-0 bg-gradient-to-t from-slate-900 via-transparent to-slate-900 pointer-events-none"></div>
+
+                <div id="escape-intro" class="relative z-10 transition-all duration-500">
+                    <div class="w-24 h-24 bg-emerald-900/50 rounded-full flex items-center justify-center text-5xl mx-auto mb-6 border-4 border-emerald-500 shadow-[0_0_30px_rgba(16,185,129,0.5)]">
+                        🔓
+                    </div>
+                    <h2 class="text-4xl md:text-5xl font-black font-poppins text-emerald-400 mb-4 tracking-wider">CRACK THE CODE</h2>
+                    <p class="text-slate-300 max-w-lg mx-auto mb-8 text-lg">You have completed Unit 1. To officially pass the unit and unlock your certificate, you must answer 10 rapid-fire questions perfectly. Are you ready?</p>
+                    <button onclick="startEscapeGame()" class="bg-emerald-600 hover:bg-emerald-500 text-white font-black text-xl px-12 py-4 rounded-full shadow-[0_0_20px_rgba(16,185,129,0.5)] transform hover:scale-105 transition-all uppercase tracking-widest">Begin the Test</button>
+                </div>
+
+                <div id="escape-game" class="relative z-10 hidden transition-all duration-500 w-full max-w-2xl mx-auto">
+                    <div class="flex justify-between items-center mb-6 border-b border-slate-700 pb-4">
+                        <span class="text-slate-400 font-bold tracking-widest uppercase text-sm">Security Level <span id="esc-level" class="text-emerald-400">1/10</span></span>
+                        <div class="flex gap-1" id="esc-progress-dots">
+                            <!-- JS injected dots -->
+                        </div>
+                    </div>
+
+                    <div class="bg-slate-800/80 p-8 rounded-2xl border border-slate-600 mb-8 min-h-[150px] flex items-center justify-center shadow-inner">
+                        <h3 id="esc-question" class="text-2xl md:text-3xl font-bold text-white leading-tight font-poppins">Loading Question...</h3>
+                    </div>
+
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4" id="esc-options">
+                        <!-- JS injected options -->
+                    </div>
+                </div>
+
+                <div id="escape-success" class="relative z-10 hidden transition-all duration-500 w-full max-w-2xl mx-auto">
+                    <div class="w-32 h-32 bg-yellow-500/20 rounded-full flex items-center justify-center text-7xl mx-auto mb-6 border-4 border-yellow-400 shadow-[0_0_40px_rgba(250,204,21,0.6)]">
+                        🏆
+                    </div>
+                    <h2 class="text-4xl md:text-5xl font-black font-poppins text-yellow-400 mb-2">ACCESS GRANTED</h2>
+                    <h3 class="text-2xl text-white font-bold mb-6">You have mastered Unit 1!</h3>
+                    <p class="text-slate-300 mb-8 text-lg">Congratulations! You successfully cracked the code by proving your knowledge of the Verb To Be, Nouns, WH- Questions, and Personal Info.</p>
+                    <button onclick="switchTab('tab-warmup')" class="text-slate-400 hover:text-white underline font-bold transition">Play again?</button>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- JEOPARDY MODAL -->
+    <div id="jeopardy-modal" class="modal-overlay">
+        <div class="modal-content bg-slate-900 w-full max-w-3xl rounded-3xl shadow-2xl border-4 border-blue-500 overflow-hidden m-4 flex flex-col max-h-[90vh]">
+            <div class="bg-blue-600 p-4 flex justify-between items-center shrink-0">
+                <span id="jeopardy-modal-cat" class="font-black text-yellow-300 uppercase tracking-widest text-sm md:text-lg">Category for 100</span>
+                <button onclick="closeJeopardy()" class="text-white hover:text-red-300 font-bold text-xl transition"><i class="fa-solid fa-xmark"></i></button>
+            </div>
+            
+            <div class="p-8 md:p-12 flex-grow overflow-y-auto text-center flex flex-col items-center justify-center bg-slate-800">
+                <h3 id="jeopardy-modal-q" class="text-2xl md:text-4xl font-bold text-white mb-10 leading-snug font-poppins">Question goes here?</h3>
+                
+                <div id="jeopardy-modal-options" class="grid grid-cols-1 gap-4 w-full max-w-xl mx-auto">
+                    <!-- Buttons injected via JS -->
+                </div>
+                <p id="jeopardy-feedback" class="mt-6 font-bold h-6 text-lg"></p>
+            </div>
+        </div>
+    </div>
+
+    <div id="toast" class="toast no-print"></div>
+
+    <script>
+        // Global UI Functions
+        function switchTab(tabId) {
+            try {
+                document.querySelectorAll('.tab-content').forEach(t => t.classList.remove('active'));
+                const tabs = ['tab-warmup', 'tab-book', 'tab-wh', 'tab-dialogues', 'tab-wrapup'];
+                
+                tabs.forEach(id => {
+                    const btn = document.getElementById(`btn-${id}`);
+                    if (btn) btn.className = "px-6 py-2.5 rounded-full font-bold text-sm transition-all duration-300 text-slate-500 hover:bg-slate-100 whitespace-nowrap";
+                });
+                
+                const target = document.getElementById(tabId);
+                if (target) target.classList.add('active');
+                
+                const activeBtn = document.getElementById(`btn-${tabId}`);
+                if (activeBtn) activeBtn.className = "px-6 py-2.5 rounded-full font-bold text-sm transition-all duration-300 bg-slate-800 text-white shadow-md whitespace-nowrap";
+                
+                window.scrollTo({ top: 0, behavior: 'smooth' });
+            } catch (e) { console.error('switchTab error:', e); }
+        }
+
+        function showToast(msg, type = 'success') {
+            try {
+                const toast = document.getElementById('toast');
+                toast.textContent = msg;
+                toast.className = `toast toast-${type} show`;
+                setTimeout(() => toast.classList.remove('show'), 3000);
+            } catch (e) { console.error(e); }
+        }
+
+        // ==========================================
+        // REUSABLE CHECKERS (WH-, Dropdowns, Inputs)
+        // ==========================================
+        function checkDropdowns(idsArray, sectionId) {
+            let allCorrect = true;
+            idsArray.forEach(id => {
+                const select = document.getElementById(id);
+                if (!select) return;
+                
+                if (select.value === 'correct') {
+                    select.classList.remove('border-slate-300', 'border-red-400');
+                    select.classList.add('border-green-400', 'bg-green-50', 'text-green-700');
+                } else {
+                    allCorrect = false;
+                    if (select.value !== "") {
+                        select.classList.remove('border-slate-300');
+                        select.classList.add('border-red-400', 'bg-red-50', 'text-red-700');
+                    }
+                }
+            });
+
+            const feedback = document.getElementById(sectionId);
+            if (allCorrect) {
+                if (feedback) { feedback.textContent = "✅ All correct!"; feedback.className = "mt-3 font-bold h-5 text-sm text-green-600"; }
+                showToast("✅ Well done!", "success");
+            } else {
+                if (feedback) { feedback.textContent = "❌ Some answers are incorrect. Try again!"; feedback.className = "mt-3 font-bold h-5 text-sm text-red-500"; }
+                showToast("❌ Check your answers.", "error");
+            }
+        }
+
+        function checkInputs(inputsArray, feedbackId) {
+            let allCorrect = true;
+            inputsArray.forEach(item => {
+                const input = document.getElementById(item.id);
+                if (!input) return;
+                const val = input.value.trim().toLowerCase().replace(/\s/g, '').replace(/’/g, "'"); 
+                const target = item.a.toLowerCase().replace(/\s/g, '').replace(/’/g, "'");
+                
+                if (val === target) {
+                    input.classList.remove('border-slate-400', 'border-red-400');
+                    input.classList.add('border-green-500', 'text-green-700', 'bg-green-50');
+                } else {
+                    allCorrect = false;
+                    if (val !== "") {
+                        input.classList.remove('border-slate-400', 'border-green-500', 'bg-green-50');
+                        input.classList.add('border-red-400', 'text-red-700', 'bg-red-50');
+                    }
+                }
+            });
+            
+            const feedbackEl = document.getElementById(feedbackId);
+            if (feedbackEl) {
+                if (allCorrect) {
+                    feedbackEl.textContent = "✅ All correct!";
+                    feedbackEl.className = "font-bold text-sm h-5 text-green-600 mt-2";
+                    showToast("✅ Perfect!", "success");
+                } else {
+                    feedbackEl.textContent = "❌ Check the red boxes.";
+                    feedbackEl.className = "font-bold text-sm h-5 text-red-500 mt-2";
+                    showToast("❌ Some mistakes.", "error");
+                }
+            }
+        }
+
+        // ==========================================
+        // ACTIVITY: JEOPARDY
+        // ==========================================
+        let jeopardyScore = 0;
+        let activeJCat = -1;
+        let activeJVal = -1;
+        let activeJPoints = 0;
+
+        const jData = [
+            // Cat 0: Articles A/An
+            [
+                { q: "Choose the correct option:<br>She is ___ doctor.", o: ["a", "an", "the"], a: 0 },
+                { q: "Choose the correct option:<br>He is ___ engineer.", o: ["a", "an", "the"], a: 1 },
+                { q: "Choose the correct option:<br>It is ___ apple.", o: ["a", "an", "the"], a: 1 },
+                { q: "Choose the correct sentence:", o: ["I am a artist.", "I am an artist.", "I am artist."], a: 1 },
+                { q: "Complete the sentence:<br>I am ___ student and my brother is ___ architect.", o: ["a / a", "an / a", "a / an"], a: 2 }
+            ],
+            // Cat 1: Plural Nouns
+            [
+                { q: "What is the plural of 'Car'?", o: ["Cares", "Cars", "Caries"], a: 1 },
+                { q: "What is the plural of 'City'?", o: ["Citys", "Cities", "Cites"], a: 1 },
+                { q: "What is the plural of 'Man'?", o: ["Mans", "Men", "Mens"], a: 1 },
+                { q: "What is the plural of 'Child'?", o: ["Childs", "Childrens", "Children"], a: 2 },
+                { q: "What is the plural of 'Person'?", o: ["Persons", "People", "Peoples"], a: 1 }
+            ],
+            // Cat 2: Verb To Be
+            [
+                { q: "I ______ a student.", o: ["am", "are", "is"], a: 0 },
+                { q: "You ______ my best friend.", o: ["am", "are", "is"], a: 1 },
+                { q: "He ______ from Colombia.", o: ["am", "are", "is"], a: 2 },
+                { q: "Choose the correct negative sentence:", o: ["She aren't a doctor.", "She isn't a doctor.", "She not is a doctor."], a: 1 },
+                { q: "Diego and I ______ ready for the test!", o: ["am", "are", "is"], a: 1 }
+            ],
+            // Cat 3: Personal Info
+            [
+                { q: "How do you answer: 'What is your name?'", o: ["I am fine.", "My name is David.", "I am 20."], a: 1 },
+                { q: "How do you answer: 'Where are you from?'", o: ["I am from Mexico.", "I live in Mexico.", "I am Mexican."], a: 0 },
+                { q: "How do you answer: 'How old are you?'", o: ["I have 25 years.", "I am 25 years old.", "I 25 years."], a: 1 },
+                { q: "How do you answer: 'What is your phone number?'", o: ["My number have 555.", "I am 555-1234.", "It is 555-1234."], a: 2 },
+                { q: "How do you answer: 'What do you do?'", o: ["I am an accountant.", "I am doing good.", "I do my homework."], a: 0 }
+            ],
+            // Cat 4: Reading Aloud
+            [
+                { q: "<div class='text-left text-xl bg-slate-800 p-6 rounded-xl border border-slate-600 font-nunito leading-relaxed'>\"Hi! My name is Sara.<br>I am 20 years old.<br>I am from Peru, but I live in Lima.<br>Nice to meet you!\"</div><br><span class='text-sm text-slate-400'>Teacher, rate the pronunciation:</span>", o: ["Perfect Pronunciation! ✅", "Needs Practice ❌"], a: 0 },
+                { q: "<div class='text-left text-xl bg-slate-800 p-6 rounded-xl border border-slate-600 font-nunito leading-relaxed'>\"Hello, I am Tom.<br>I am a doctor from Canada.<br>My phone number is 555-0198.<br>My email is tom@email.com.\"</div><br><span class='text-sm text-slate-400'>Teacher, rate the pronunciation:</span>", o: ["Perfect Pronunciation! ✅", "Needs Practice ❌"], a: 0 },
+                { q: "<div class='text-left text-xl bg-slate-800 p-6 rounded-xl border border-slate-600 font-nunito leading-relaxed'>\"Good morning everyone!<br>My mother is Maria and she is an engineer.<br>We live in Bogota, Colombia.<br>Her favorite hobby is reading.\"</div><br><span class='text-sm text-slate-400'>Teacher, rate the pronunciation:</span>", o: ["Perfect Pronunciation! ✅", "Needs Practice ❌"], a: 0 },
+                { q: "<div class='text-left text-xl bg-slate-800 p-6 rounded-xl border border-slate-600 font-nunito leading-relaxed'>\"This is my friend Carlos.<br>He is 35 years old and he is an artist.<br>He is not from Mexico, he is from Spain.<br>He is very friendly.\"</div><br><span class='text-sm text-slate-400'>Teacher, rate the pronunciation:</span>", o: ["Perfect Pronunciation! ✅", "Needs Practice ❌"], a: 0 },
+                { q: "<div class='text-left text-xl bg-slate-800 p-6 rounded-xl border border-slate-600 font-nunito leading-relaxed'>\"Hello class. My nickname is Leo.<br>I am an accountant from New York.<br>New York is a very big and beautiful city.<br>I love technology.\"</div><br><span class='text-sm text-slate-400'>Teacher, rate the pronunciation:</span>", o: ["Perfect Pronunciation! ✅", "Needs Practice ❌"], a: 0 }
+            ]
+        ];
+
+        function openJeopardy(cat, row, points) {
+            activeJCat = cat;
+            activeJVal = row;
+            activeJPoints = points;
+
+            const modal = document.getElementById('jeopardy-modal');
+            const data = jData[cat][row];
+            
+            let catName = ["Articles A/An", "Plural Nouns", "Verb To Be", "Personal Info", "Reading Aloud"][cat];
+            document.getElementById('jeopardy-modal-cat').textContent = `${catName} for ${points}`;
+            document.getElementById('jeopardy-modal-q').innerHTML = data.q;
+            document.getElementById('jeopardy-feedback').textContent = "";
+            document.getElementById('jeopardy-feedback').className = "mt-6 font-bold h-6 text-lg";
+            
+            const optionsContainer = document.getElementById('jeopardy-modal-options');
+            optionsContainer.innerHTML = '';
+            
+            data.o.forEach((opt, idx) => {
+                const btn = document.createElement('button');
+                btn.className = "w-full bg-blue-700 hover:bg-blue-600 border-2 border-blue-500 text-white font-bold py-4 rounded-xl text-lg transition shadow-md j-opt-btn";
+                btn.textContent = opt;
+                btn.onclick = () => checkJeopardyAnswer(idx, data.a, btn);
+                optionsContainer.appendChild(btn);
+            });
+
+            modal.classList.add('show');
+        }
+
+        function closeJeopardy() {
+            document.getElementById('jeopardy-modal').classList.remove('show');
+        }
+
+        function checkJeopardyAnswer(guess, correct, btnEl) {
+            const allBtns = document.querySelectorAll('.j-opt-btn');
+            allBtns.forEach(b => b.disabled = true); // Lock after guess
+
+            const feedback = document.getElementById('jeopardy-feedback');
+            
+            if (guess === correct) {
+                btnEl.classList.replace('bg-blue-700', 'bg-green-600');
+                btnEl.classList.replace('border-blue-500', 'border-green-400');
+                feedback.textContent = `✅ Correct! +${activeJPoints} Points`;
+                feedback.classList.add('text-green-400');
+                jeopardyScore += activeJPoints;
+                document.getElementById('jeopardy-score').textContent = jeopardyScore;
+            } else {
+                btnEl.classList.replace('bg-blue-700', 'bg-red-600');
+                btnEl.classList.replace('border-blue-500', 'border-red-400');
+                
+                // Highlight correct one
+                allBtns[correct].classList.replace('bg-blue-700', 'bg-green-600');
+                allBtns[correct].classList.replace('border-blue-500', 'border-green-400');
+
+                feedback.textContent = `❌ Incorrect.`;
+                feedback.classList.add('text-red-400');
+                jeopardyScore -= activeJPoints;
+                document.getElementById('jeopardy-score').textContent = jeopardyScore;
+            }
+
+            // Disable the board button
+            const boardBtn = document.getElementById(`btn-j-${activeJCat}-${activeJVal}`);
+            boardBtn.disabled = true;
+            boardBtn.textContent = "";
+
+            setTimeout(() => {
+                closeJeopardy();
+            }, 2500);
+        }
+
+        // ==========================================
+        // ACTIVITY: DIALOGUES
+        // ==========================================
+        const dialoguesData = {
+            1: [
+                { id: "1-1", html: `<span class="text-blue-700 font-bold">Anna:</span> Good morning, Tom! Are you ready for the meeting?` },
+                { id: "1-2", html: `<span class="text-purple-700 font-bold">Tom:</span> Hello, Anna. Yes, I am ready. But <select class="mx-1 border border-slate-300 rounded text-xs text-indigo-700 bg-white font-bold outline-none"><option value="wrong">what</option><option value="correct">where</option></select> is the new manager?` },
+                { id: "1-3", html: `<span class="text-blue-700 font-bold">Anna:</span> Oh, he is not here yet. His flight is late.` },
+                { id: "1-4", html: `<span class="text-purple-700 font-bold">Tom:</span> I see. <select class="mx-1 border border-slate-300 rounded text-xs text-indigo-700 bg-white font-bold outline-none"><option value="correct">Who</option><option value="wrong">How</option></select> is he traveling with?` },
+                { id: "1-5", html: `<span class="text-blue-700 font-bold">Anna:</span> He is traveling with Carlos. Carlos is the lead engineer.` },
+                { id: "1-6", html: `<span class="text-purple-700 font-bold">Tom:</span> That's good. Is Carlos from Spain or Mexico?` },
+                { id: "1-7", html: `<span class="text-blue-700 font-bold">Anna:</span> He is from Mexico, but he <select class="mx-1 border border-slate-300 rounded text-xs text-indigo-700 bg-white font-bold outline-none"><option value="correct">lives</option><option value="wrong">is</option></select> in Canada now.` },
+                { id: "1-8", html: `<span class="text-purple-700 font-bold">Tom:</span> Excellent. Well, let's wait in the conference room.` }
+            ],
+            2: [
+                { id: "2-1", html: `<span class="text-emerald-700 font-bold">Rita:</span> Hey Jake! <select class="mx-1 border border-slate-300 rounded text-xs text-indigo-700 bg-white font-bold outline-none"><option value="correct">What's</option><option value="wrong">How's</option></select> up? Are you busy?` },
+                { id: "2-2", html: `<span class="text-rose-700 font-bold">Jake:</span> Not much, Rita. I am just reading a book.` },
+                { id: "2-3", html: `<span class="text-emerald-700 font-bold">Rita:</span> Nice! <select class="mx-1 border border-slate-300 rounded text-xs text-indigo-700 bg-white font-bold outline-none"><option value="wrong">Who</option><option value="correct">What</option></select> is the book about?` },
+                { id: "2-4", html: `<span class="text-rose-700 font-bold">Jake:</span> It is about history. It is very interesting.` },
+                { id: "2-5", html: `<span class="text-emerald-700 font-bold">Rita:</span> Are you free this afternoon? We are going to the park.` },
+                { id: "2-6", html: `<span class="text-rose-700 font-bold">Jake:</span> Yes, I am free! <select class="mx-1 border border-slate-300 rounded text-xs text-indigo-700 bg-white font-bold outline-none"><option value="correct">When</option><option value="wrong">Where</option></select> are you going exactly?` },
+                { id: "2-7", html: `<span class="text-emerald-700 font-bold">Rita:</span> We are going to Central Park at 4:00 PM.` },
+                { id: "2-8", html: `<span class="text-rose-700 font-bold">Jake:</span> Sounds great. I will see you there!` },
+                { id: "2-9", html: `<span class="text-emerald-700 font-bold">Rita:</span> Okay, <select class="mx-1 border border-slate-300 rounded text-xs text-indigo-700 bg-white font-bold outline-none"><option value="correct">catch</option><option value="wrong">see</option></select> you later!` }
+            ],
+            3: [
+                { id: "3-1", html: `<span class="text-amber-700 font-bold">Teacher:</span> Good morning class. Let's begin our review session.` },
+                { id: "3-2", html: `<span class="text-sky-700 font-bold">Student:</span> Teacher, excuse me. You <select class="mx-1 border border-slate-300 rounded text-xs text-indigo-700 bg-white font-bold outline-none"><option value="wrong">is</option><option value="correct">are</option></select> on mute.` },
+                { id: "3-3", html: `<span class="text-amber-700 font-bold">Teacher:</span> Oh, sorry! Thank you. Can you hear me now?` },
+                { id: "3-4", html: `<span class="text-sky-700 font-bold">Student:</span> Yes, but the connection is bad. My internet is unstable.` },
+                { id: "3-5", html: `<span class="text-amber-700 font-bold">Teacher:</span> No problem. Are the other students here?` },
+                { id: "3-6", html: `<span class="text-sky-700 font-bold">Student:</span> Yes, they are. But <select class="mx-1 border border-slate-300 rounded text-xs text-indigo-700 bg-white font-bold outline-none"><option value="correct">where</option><option value="wrong">who</option></select> is the presentation?` },
+                { id: "3-7", html: `<span class="text-amber-700 font-bold">Teacher:</span> Ah! Can you share your <select class="mx-1 border border-slate-300 rounded text-xs text-indigo-700 bg-white font-bold outline-none"><option value="correct">screen</option><option value="wrong">camera</option></select>, please?` },
+                { id: "3-8", html: `<span class="text-sky-700 font-bold">Student:</span> Sure, here is the presentation for everyone.` }
+            ]
+        };
+
+        function initDialogues() {
+            [1, 2, 3].forEach(scene => {
+                const bank = document.getElementById(`bank-${scene}`);
+                if (!bank) return;
+                bank.innerHTML = '';
+                
+                let items = [...dialoguesData[scene]];
+                items.sort(() => Math.random() - 0.5);
+
+                items.forEach(item => {
+                    const btn = document.createElement('div');
+                    btn.className = 'order-btn bg-white border border-slate-300 text-slate-700 p-3 rounded-lg text-sm shadow-sm flex items-center justify-between group';
+                    btn.setAttribute('data-id', item.id);
+                    btn.innerHTML = `
+                        <div class="flex-grow">${item.html}</div>
+                        <i class="fa-solid fa-arrow-right-arrow-left text-slate-300 group-hover:text-indigo-500 ml-3 shrink-0"></i>
+                    `;
+                    
+                    btn.onclick = function(e) {
+                        if(e.target.tagName.toLowerCase() === 'select') return;
+                        const parent = btn.parentElement;
+                        if (parent.id === `bank-${scene}`) {
+                            document.getElementById(`board-${scene}`).appendChild(btn);
+                        } else {
+                            document.getElementById(`bank-${scene}`).appendChild(btn);
+                        }
+                    };
+                    bank.appendChild(btn);
+                });
+            });
+        }
+
+        function resetDialogue(scene) {
+            const bank = document.getElementById(`bank-${scene}`);
+            const board = document.getElementById(`board-${scene}`);
+            const fb = document.getElementById(`fb-diag-${scene}`);
+            
+            while (board.firstChild) { bank.appendChild(board.firstChild); }
+            
+            const selects = bank.querySelectorAll('select');
+            selects.forEach(s => {
+                s.value = "";
+                s.classList.remove('border-green-500', 'text-green-700', 'bg-green-50', 'border-red-500', 'text-red-700', 'bg-red-50');
+            });
+
+            fb.textContent = "";
+        }
+
+        function checkDialogue(scene) {
+            const board = document.getElementById(`board-${scene}`);
+            const fb = document.getElementById(`fb-diag-${scene}`);
+            const items = board.children;
+            const originalData = dialoguesData[scene];
+
+            if (items.length !== originalData.length) {
+                fb.textContent = "❌ Move all sentences to the Dialogue Board first!";
+                fb.className = "text-center font-bold text-sm h-5 mt-4 text-amber-500";
+                return;
+            }
+
+            let isOrderCorrect = true;
+            let areDropdownsCorrect = true;
+
+            for (let i = 0; i < items.length; i++) {
+                if (items[i].getAttribute('data-id') !== originalData[i].id) {
+                    isOrderCorrect = false;
+                }
+                
+                const selects = items[i].querySelectorAll('select');
+                selects.forEach(s => {
+                    if (s.value === 'correct') {
+                        s.classList.remove('border-slate-300', 'border-red-500', 'text-red-700', 'bg-red-50');
+                        s.classList.add('border-green-500', 'text-green-700', 'bg-green-50');
+                    } else {
+                        areDropdownsCorrect = false;
+                        if(s.value !== "") {
+                            s.classList.remove('border-slate-300', 'border-green-500', 'text-green-700', 'bg-green-50');
+                            s.classList.add('border-red-500', 'text-red-700', 'bg-red-50');
+                        }
+                    }
+                });
+            }
+
+            if (isOrderCorrect && areDropdownsCorrect) {
+                fb.textContent = "✅ Perfect scene! Practice reading it with your partner.";
+                fb.className = "text-center font-bold text-sm h-5 mt-4 text-emerald-500";
+                showToast("✅ Scene complete!", "success");
+            } else if (!isOrderCorrect && areDropdownsCorrect) {
+                fb.textContent = "❌ The grammar is right, but the sentences are in the wrong order.";
+                fb.className = "text-center font-bold text-sm h-5 mt-4 text-red-500";
+            } else if (isOrderCorrect && !areDropdownsCorrect) {
+                fb.textContent = "❌ The order is right, but check your grammar choices (red boxes).";
+                fb.className = "text-center font-bold text-sm h-5 mt-4 text-red-500";
+            } else {
+                fb.textContent = "❌ The order is wrong, and there are grammar mistakes.";
+                fb.className = "text-center font-bold text-sm h-5 mt-4 text-red-500";
+            }
+        }
+
+        // ==========================================
+        // ACTIVITY: ESCAPE GAME
+        // ==========================================
+        const escapeData = [
+            { q: "What is the plural of 'man'?", o: ["mans", "men", "mens"], a: 1 },
+            { q: "Complete: 'My parents ______ from Italy.'", o: ["is", "am", "are"], a: 2 },
+            { q: "Choose the right article: 'She is ______ engineer.'", o: ["a", "an", "the"], a: 1 },
+            { q: "What is the correct date format?", o: ["July 4th", "4th of July", "July 4"], a: 0 },
+            { q: "Which WH- word asks about a PLACE?", o: ["When", "Who", "Where"], a: 2 },
+            { q: "Choose the correct sentence:", o: ["I have 20 years old.", "I am 20 years old.", "I am 20 years."], a: 1 },
+            { q: "What is the plural of 'child'?", o: ["childs", "childrens", "children"], a: 2 },
+            { q: "How do you ask about age?", o: ["How old are you?", "What is your age?", "How many years?"], a: 0 },
+            { q: "Complete: '______ is your birthday?'", o: ["What", "Where", "When"], a: 2 },
+            { q: "Which of these is a correct negative?", o: ["She not is happy.", "She is not happy.", "She don't happy."], a: 1 }
+        ];
+        
+        let currentEsc = 0;
+
+        function startEscapeGame() {
+            document.getElementById('escape-intro').classList.add('hidden');
+            document.getElementById('escape-game').classList.remove('hidden');
+            currentEsc = 0;
+            renderEscapeDots();
+            renderEscapeQ();
+        }
+
+        function renderEscapeDots() {
+            const container = document.getElementById('esc-progress-dots');
+            container.innerHTML = '';
+            for(let i=0; i<10; i++) {
+                let color = i < currentEsc ? 'bg-emerald-500' : 'bg-slate-700';
+                container.innerHTML += `<div class="w-3 h-3 rounded-full ${color}"></div>`;
+            }
+        }
+
+        function renderEscapeQ() {
+            if (currentEsc >= escapeData.length) {
+                document.getElementById('escape-game').classList.add('hidden');
+                document.getElementById('escape-success').classList.remove('hidden');
+                return;
+            }
+
+            const data = escapeData[currentEsc];
+            document.getElementById('esc-level').textContent = `${currentEsc + 1}/10`;
+            document.getElementById('esc-question').textContent = data.q;
+
+            const opts = document.getElementById('esc-options');
+            opts.innerHTML = '';
+            
+            data.o.forEach((opt, idx) => {
+                const btn = document.createElement('button');
+                btn.className = "bg-slate-700 hover:bg-slate-600 text-white font-bold py-4 px-6 rounded-xl border border-slate-500 hover:border-emerald-400 transition text-lg w-full esc-opt-btn";
+                btn.textContent = opt;
+                btn.onclick = () => checkEscape(idx, data.a, btn);
+                opts.appendChild(btn);
+            });
+            renderEscapeDots();
+        }
+
+        function checkEscape(guess, correct, btn) {
+            const allBtns = document.querySelectorAll('.esc-opt-btn');
+            allBtns.forEach(b => b.disabled = true);
+
+            if (guess === correct) {
+                btn.classList.replace('bg-slate-700', 'bg-green-600');
+                btn.classList.replace('border-slate-500', 'border-green-400');
+                setTimeout(() => {
+                    currentEsc++;
+                    renderEscapeQ();
+                }, 600);
+            } else {
+                btn.classList.replace('bg-slate-700', 'bg-red-600');
+                btn.classList.replace('border-slate-500', 'border-red-400');
+                
+                // Show correct one
+                allBtns[correct].classList.replace('bg-slate-700', 'bg-green-600');
+                allBtns[correct].classList.replace('border-slate-500', 'border-green-400');
+                
+                showToast("System Breach! Restarting sequence...", "error");
+                
+                // Restart sequence
+                setTimeout(() => {
+                    currentEsc = 0;
+                    renderEscapeQ();
+                }, 1500);
+            }
+        }
+
+        // ==========================================
+        // INITIALIZATION
+        // ==========================================
+        window.onload = function() {
+            try { initDialogues(); } catch (e) { console.error('Dialogue error:', e); }
+            switchTab('tab-warmup');
+        };
+    </script>
+</body>
+</html>
